@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+          
+        
+    </title>
+
+    <link rel="canonical" href="http://example.com/">
+
+    <!-- Bootstrap Core CSS -->
+    
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/hux-blog.min.css">
+
+
+    <!-- Pygments Highlight CSS -->
+    
+<link rel="stylesheet" href="/css/highlight.css">
+
+
+    <!-- Custom Fonts -->
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">lly的技术心得</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+
+                    
+
+                        
+                        <li>
+                            <a href="/404.html">404</a>
+                        </li>
+                        
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<header class="intro-header" style="background-image: url('/')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
+                <div class="site-heading">
+                    <h1>lly的技术心得</h1>
+                    <!--<hr class="small">-->
+                    <span class="subheading">欢迎来到我的博客</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+<!-- Main Content -->
+<div class="container">
+    <div class="row">
+        
+
+<!-- USE SIDEBAR -->
+    <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-8 col-md-offset-1
+                col-sm-12
+                col-xs-12
+                post-container
+            ">
+            
+                <!-- Main Content -->
+
+
+<div class="post-preview">
+
+    <a href="/2021/08/22/浅析map和forEach的区别/">
+        <h2 class="post-title">
+            浅析map和forEach的区别
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            map和forEach的共同点都起到了for循环一样的遍历数组的作用map：创建一个新的数组，其中每一个元素由调用数组中的每一个元素执行提供的函数得来map 的作用与 for 循环完全相同，只是 map 会创建一个新数组，其结果是在调用数组中的每个元素上调用提供的函数。let doubled = arr.map(num =&gt; &#123;     return num * 2; &#1......
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Lanyi Liu on
+        2021-08-22
+    </p>
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/2021/08/22/JS异步编程方案/">
+        <h2 class="post-title">
+            JS异步编程方案
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            JS是一门单线程语言，并且浏览器使用异步非阻塞的事件循环模型来进行JS任务调度，JS常用的有这几种：回调函数、事件监听、Promise、Generator、async/await。回调函数是异步编程的通用方式，后随着 ES标准的发展，Promise、Generator 和 async/await 接连出现。
+回调函数是JS异步编程的最基本、最原始的方式，例如事件回调、setTimeout/s......
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Lanyi Liu on
+        2021-08-22
+    </p>
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/2021/07/15/开源贡献指南/">
+        <h2 class="post-title">
+            开源贡献指南
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            如何为开源社区Github做贡献
+首先你需要配置git，并且拥有一个GitHub账号。
+GitHub页面中，在你想贡献的项目右上角点击fork, 这个时候，你会发现你的仓库中多了一个此项目的仓库（拥有者是自己）。
+将自己拥有的这个项目仓库克隆到本地，进行错误修复和更改。push到远程分支。
+在你拥有的本项目仓库点击菜单栏第二个选项Pull Request =&gt; New pull req......
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Lanyi Liu on
+        2021-07-15
+    </p>
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/2021/07/06/BigInt/">
+        <h2 class="post-title">
+            BigInt
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+              今天刷力扣提升算法的时候，偶然遇到一道有超过number类型最大长度限度的测试用例。经过查阅资料学习，总结出此篇关于BigInt类型的一些知识。  BigInt数据类型的目的是比Number数据类型支持的范围更大的整数值。在对大整数执行数学运算时，以任意精度表示整数的能力尤为重要。使用BigInt，整数溢出将不再是问题。  此外，可以安全地使用更加准确时间戳，大整数ID等，而无需使用变通......
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Lanyi Liu on
+        2021-07-06
+    </p>
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/2021/06/03/浏览器循环机制，宏任务与微任务/">
+        <h2 class="post-title">
+            浏览器循环机制，宏任务与微任务
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            
+JS线程负责处理JS代码，当遇到一些异步操作的时候，则将这些异步事件移交给Web APIs 处理，自己则继续往下执行。
+Web APIs线程将接收到的事件按照一定规则添加到任务队列中，宏事件（DOM事件、Ajax事件、setTimeout事件等）添加到宏任务队列中，微事件（Promise、nextTick）添加到微事件队列中。
+JS线程处理完当前的所有任务以后（执行栈为空），它会先去微任务......
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Lanyi Liu on
+        2021-06-03
+    </p>
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/2021/06/03/浅析instanceof/">
+        <h2 class="post-title">
+            浅析instanceof
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            instanceof 左操作数是一个类，右操作数是标识对象的类。*如果左侧的对象是右侧类的实例，则返回true.*而js中对象的类是通过初始化它们的构造函数来定义的。即instanceof的右操作数应当是一个函数。所有的对象都是object的实例。如果左操作数不是对象，则返回false,如果右操作数不是函数，则抛出typeError。
+instanceof 运算符是用来测试一个对象是否在其原......
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Lanyi Liu on
+        2021-06-03
+    </p>
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/2021/05/27/JS中的prototype、-proto-与constructor/">
+        <h2 class="post-title">
+            JS中的prototype、__proto__与constructor
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            ①__proto__和constructor属性是对象所独有的；② prototype属性是函数所独有的。但是由于JS中函数也是一种对象，所以函数也拥有__proto__和constructor属性
+
+proto 属性对象（除null外）独有的_proto_属性实际上是由一个对象指向它的父对象。作用为当访问某一个对象的属性（包含方法）时，比如toString(),找不到时，就会去此对象的父级......
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Lanyi Liu on
+        2021-05-27
+    </p>
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/2021/05/26/根据vue基本路由结构的某个子节点，找到任意父节点/">
+        <h2 class="post-title">
+            根据vue基本路由结构的某个子节点，找到任意父节点
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            const root = [
+&#123;
+  name: &#39;首页&#39;,
+  path: &#39;/&#39;,
+  child: [
+    &#123;
+      name: &#39;页面1&#39;,
+      path: &#39;/page1&#39;,
+      child: [
+        &#123;
+          name: &#39;页面......
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Lanyi Liu on
+        2021-05-26
+    </p>
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/2021/05/19/JS常用隐式转换/">
+        <h2 class="post-title">
+            JS常用隐式转换
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            x+”” ===  x.toSrting();+x   === Number(x);!!x  === Bolean(x); 
+...
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Lanyi Liu on
+        2021-05-19
+    </p>
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/2021/04/28/中Map对象的属性和方法/">
+        <h2 class="post-title">
+            中Map对象的属性和方法
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            实现：数组对象=&gt;根据对象下的某个键去重先上方法：      unique(arr: any[], u_key: string) {        const map = new Map();        arr.forEach(item =&gt; {          if (!map.has(item[u_key])) {            map.set(item[u_k......
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Lanyi Liu on
+        2021-04-28
+    </p>
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/2021/04/19/git提交规范/">
+        <h2 class="post-title">
+            git提交规范
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            1、方便快速浏览查找，回溯之前的工作内容2、可以直接从commit生成Change log（发布时用于说明版本差异）Commit Message 格式
+
+   (): 
+   // 注意冒号： 后有空格scope选填，表示commit的作用范围，如数据层，视图层，也可以是目录名称；subject必填，用户对commit的简短描述type必填，表示提交类型，如下：•    feat-新功能 f......
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Lanyi Liu on
+        2021-04-19
+    </p>
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/2021/04/05/浏览器实现聊天对话-环信IM使用心得/">
+        <h2 class="post-title">
+            浏览器实现聊天对话---环信IM使用心得
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            根据环信IM官方提供的SDK包，引入使用npm install easemob-websdk –saveimport websdk from “easemob-websdk”注：该方式只引用了 Web SDK ，需要在项目中配置 WebIMConfig 文件内的参数，用于实例化 websdk。
+暂贴[vue demo使用说明][1]  
+...
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Lanyi Liu on
+        2021-04-05
+    </p>
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/2021/03/18/Hooks使用心得/">
+        <h2 class="post-title">
+            Hooks使用心得
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            Hook是React 16.8.0版本增加的新特性，主要目的是在函数组件中实现state以及其他特性。三个常用Hook
+
+State Hook使得函数式组件也具有state状态，并且可以进行读写操作具体用法(ts版本)：const [xxx,setXxx] = useState(initValue)第一次声明用于初始化state变量以及赋予修改此变量的方法。即xxx为 state变量，ini......
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Lanyi Liu on
+        2021-03-18
+    </p>
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/2021/01/29/JS控制浏览器滚动条/">
+        <h2 class="post-title">
+            JS控制浏览器滚动条
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            首先获取元素  document.getElementsByClassName(‘classsName’).style.background=’red’或 document.querySelector(‘.classsName’).style.background=’red’确认所选元素   可能是多个元素使用  document.getElementsByClassName(‘classs......
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Lanyi Liu on
+        2021-01-29
+    </p>
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/2021/01/12/JS随机字符串/">
+        <h2 class="post-title">
+            JS超随机字符串
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            Math.random().toString(36).substr(2, 9)特别注意：因为每次会重新更新，不适用于可更新组件的key值
+...
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Lanyi Liu on
+        2021-01-12
+    </p>
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/2021/01/12/axios封装/">
+        <h2 class="post-title">
+            axios封装
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            1.引入axios和elementui（可能会用到  import axios from &#39;axios&#39;    import &#123; Table &#125; from &#39;element-ui&#39;2.引入请求头  import &#123; getHeader &#125; from &#39;@/axios/header&#39;3.设置baseUrl ......
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Lanyi Liu on
+        2021-01-12
+    </p>
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/2020/12/23/JS函数的柯里化/">
+        <h2 class="post-title">
+            JS函数的柯里化
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            JS函数的柯里化：通过函数调用继续返回函数的形式，实现多次接受参数统一处理的函数编码形式
+function sum(a)&#123;
+ return (b)=&gt;&#123;
+    return (c)=&gt;&#123;
+       return  a+b+c
+       &#125;
+   &#125;
+&#125;
+sum(1)(2)(3)   //6
+
+...
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Lanyi Liu on
+        2020-12-23
+    </p>
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/2020/12/16/Linux学习-常用命令/">
+        <h2 class="post-title">
+            Linux学习---常用命令
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            最近开始接触服务器相关的知识，服务器主流操作系统为Linux，接下来记录并复习一下所学习到的命令先贴一个网址  https://blog.csdn.net/qq_23329167/article/details/83856430
+mkdir 创建文件夹touch 创建文件rm(-f) 删除（不确认提醒）vi/vim 进入编辑scp -r &lt;本地路径文件&gt;  root@&lt;服务......
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Lanyi Liu on
+        2020-12-16
+    </p>
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/2020/11/12/element实现表格拖拽排序-sortablejs使用心得/">
+        <h2 class="post-title">
+            element实现表格拖拽排序---sortableJs
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            npm install sortablejs –saveimport Sortable from ‘sortablejs’
+可以进行主流的部件拖拽排序，功能较全体验良好
+//行拖拽rowDrop() {  const tbody = document.querySelector(“.el-table__body-wrapper tbody”);  const selft = this;  S......
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Lanyi Liu on
+        2020-11-12
+    </p>
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/2020/11/03/关于node-gyp报错/">
+        <h2 class="post-title">
+            关于node-gyp报错
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            gyp报错或许是由于 c++编译扩展未安装，解决方案：1.mac需要对应的Xcode，Windows需要对应的VS2.在 PowerShell!中管理员运行 npm install –g windows-build-tools  //windows解决方案
+扩展资料：gyp是为Chromium项目创建的项目生成工具，可以从平台无关的配置生成平台相关的Visual Studio、Xcode、M......
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Lanyi Liu on
+        2020-11-03
+    </p>
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/2020/10/02/ES6中的空置合并运算符/">
+        <h2 class="post-title">
+            ES6中的空置合并运算符
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            a ?? b 的结果是：
+如果 a 是已定义的，则结果为 a，如果 a 不是已定义的，则结果为 b。换句话说，如果第一个参数不是 null/undefined，则 ?? 返回第一个参数。否则，返回第二个参数。
+空值合并运算符并不是什么全新的东西。它只是一种获得两者中的第一个“已定义的”值的不错的语法。
+我们可以使用我们已知的运算符重写 result = a ?? b，像这样：
+result ......
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Lanyi Liu on
+        2020-10-02
+    </p>
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/2020/09/18/键值对型对象，根据key取value/">
+        <h2 class="post-title">
+            键值对型对象，根据key取value
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            刚刚刷leecode  发现一段很有意思的代码 const map = {        type: 0,        color: 1,        name: 2,    }map[“color”]   //1   可以通过数组方式取
+...
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Lanyi Liu on
+        2020-09-18
+    </p>
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/2020/09/17/（-）ES6展开运算符深度理解/">
+        <h2 class="post-title">
+            （...）ES6展开运算符深度理解
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            1.展开运算符可以进行数组或者对象的深拷贝  let a = [1,2,3],b=[4,5]  let c=[…a,…b]   //可以实现数组拼接+深拷贝
+
+展开运算符可以被用作与函数传参例如insert(c)  //接上面的声明function insert(…nums){  console.log(nums)   //这里直接会打印出数组形式的传参  [1,2,3,4,5]}
+可以进行......
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Lanyi Liu on
+        2020-09-17
+    </p>
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/2020/09/10/ES6最强大数组方法-splice（）的深度理解/">
+        <h2 class="post-title">
+            ES6数组方法---splice（）的深度理解
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            方法splice 用于创建一个包含原数组中一个或多个元素的新数组，并且会影响原数组splice或许是最强大的数组方法，允许接受一到三个元素1.如果只有一个参数（索引值）    则会返回该索引到数组末尾的全部元素2.如果有两到三个参数 （这里x,y，z代指）x代表所要删除第一个元素的索引y表示删除个数z表示从索引x处插入的新元素
+...
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Lanyi Liu on
+        2020-09-10
+    </p>
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/2020/09/09/init/">
+        <h2 class="post-title">
+            init
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            hello, this is my init pages
+欢迎来到我的博客，我是饮冬，一名前端开发。
+...
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Lanyi Liu on
+        2020-09-09
+    </p>
+
+</div>
+<hr>
+
+
+
+<!-- Pager -->
+
+<ul class="pager">
+    
+    
+</ul>
+
+
+
+                <!-- 如果开启评论功能 -->
+                
+
+            </div>
+    <!-- Sidebar Container -->
+            <div class="
+                col-lg-3 col-lg-offset-0
+                col-md-3 col-md-offset-0
+                col-sm-12
+                col-xs-12
+                sidebar-container
+            ">
+                <!-- Featured Tags -->
+                
+
+                <!-- Short About -->
+                <section class="visible-md visible-lg">
+                    <hr><h5><a href="/about/">ABOUT ME</a></h5>
+                    <div class="short-about">
+
+                        
+
+                        
+
+                        <!-- SNS Link -->
+                        <ul class="list-inline">
+                            
+                            
+                            
+
+                            
+
+                            
+
+                            
+                            
+                            
+                            
+                        </ul>
+                    </div>
+                </section>
+                
+                <!-- Friends Blog -->
+                
+            </div>
+        
+    </div>
+</div>
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+                
+                
+
+                
+
+                
+
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; lly的技术心得 2021 
+                    <br>
+                    Theme by <a target="_blank" rel="noopener" href="http://huangxuan.me">Hux</a> 
+                    <span style="display: inline-block; margin: 0 5px;">
+                        <i class="fa fa-heart"></i>
+                    </span> 
+                    Ported by <a target="_blank" rel="noopener" href="http://blog.kaijun.rocks">Kaijun</a> | 
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="91px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=kaijun&repo=hexo-theme-huxblog&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+
+<script src="/js/jquery.min.js"></script>
+
+
+<!-- Bootstrap Core JavaScript -->
+
+<script src="/js/bootstrap.min.js"></script>
+
+
+<!-- Custom Theme JavaScript -->
+
+<script src="/js/hux-blog.min.js"></script>
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("http://example.com/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+
+
+<!-- Baidu Tongji -->
+
+
+<!-- Side Catalog -->
+
+
+
+
+
+<!-- Image to hack wechat -->
+<img src="http://example.com/img/icon_wechat.png" width="0" height="0" />
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>

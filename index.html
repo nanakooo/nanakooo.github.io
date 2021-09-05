@@ -173,49 +173,6 @@
 
 <div class="post-preview">
 
-    <a href="/2021/08/22/浅析map和forEach的区别/">
-        <h2 class="post-title">
-            浅析map和forEach的区别
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            map和forEach的共同点都起到了for循环一样的遍历数组的作用map：创建一个新的数组，其中每一个元素由调用数组中的每一个元素执行提供的函数得来map 的作用与 for 循环完全相同，只是 map 会创建一个新数组，其结果是在调用数组中的每个元素上调用提供的函数。let doubled = arr.map(num =&gt; &#123;     return num * 2; &#1......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Lanyi Liu on
-        2021-08-22
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2021/08/22/JS异步编程方案/">
-        <h2 class="post-title">
-            JS异步编程方案
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            JS是一门单线程语言，并且浏览器使用异步非阻塞的事件循环模型来进行JS任务调度，JS常用的有这几种：回调函数、事件监听、Promise、Generator、async/await。回调函数是异步编程的通用方式，后随着 ES标准的发展，Promise、Generator 和 async/await 接连出现。
-回调函数是JS异步编程的最基本、最原始的方式，例如事件回调、setTimeout/s......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Lanyi Liu on
-        2021-08-22
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-
     <a href="/2021/07/15/开源贡献指南/">
         <h2 class="post-title">
             开源贡献指南
@@ -286,7 +243,7 @@ JS线程处理完当前的所有任务以后（执行栈为空），它会先去
 
 <div class="post-preview">
 
-    <a href="/2021/06/03/浅析instanceof/">
+    <a href="/2021/06/03/vue双向绑定原理/">
         <h2 class="post-title">
             浅析instanceof
         </h2>
@@ -355,49 +312,6 @@ proto 属性对象（除null外）独有的_proto_属性实际上是由一个对
     <p class="post-meta">
         Posted by Lanyi Liu on
         2021-05-26
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2021/05/19/JS常用隐式转换/">
-        <h2 class="post-title">
-            JS常用隐式转换
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            x+”” ===  x.toSrting();+x   === Number(x);!!x  === Bolean(x); 
-...
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Lanyi Liu on
-        2021-05-19
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2021/04/28/中Map对象的属性和方法/">
-        <h2 class="post-title">
-            中Map对象的属性和方法
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            实现：数组对象=&gt;根据对象下的某个键去重先上方法：      unique(arr: any[], u_key: string) {        const map = new Map();        arr.forEach(item =&gt; {          if (!map.has(item[u_key])) {            map.set(item[u_k......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Lanyi Liu on
-        2021-04-28
     </p>
 
 </div>
@@ -475,6 +389,27 @@ State Hook使得函数式组件也具有state状态，并且可以进行读写�
 
 <div class="post-preview">
 
+    <a href="/2021/02/23/Promise的实现原理/">
+        <h2 class="post-title">
+            Promise的实现原理
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            1.Promise的基本结构new Promise((resolve, reject) =&gt; &#123;   setTimeout(() =&gt; &#123;     resolve(&#39;FULFILLED&#39;)   &#125;, 1000) &#125;)构造函数Promise必须接受一个函数作为参数，我们称该函数为handle，handle又包含resolve和......
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Lanyi Liu on
+        2021-02-23
+    </p>
+
+</div>
+<hr>
+
+<div class="post-preview">
+
     <a href="/2021/01/29/JS控制浏览器滚动条/">
         <h2 class="post-title">
             JS控制浏览器滚动条
@@ -539,59 +474,6 @@ State Hook使得函数式组件也具有state状态，并且可以进行读写�
 
 <div class="post-preview">
 
-    <a href="/2020/12/23/JS函数的柯里化/">
-        <h2 class="post-title">
-            JS函数的柯里化
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            JS函数的柯里化：通过函数调用继续返回函数的形式，实现多次接受参数统一处理的函数编码形式
-function sum(a)&#123;
- return (b)=&gt;&#123;
-    return (c)=&gt;&#123;
-       return  a+b+c
-       &#125;
-   &#125;
-&#125;
-sum(1)(2)(3)   //6
-
-...
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Lanyi Liu on
-        2020-12-23
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2020/12/16/Linux学习-常用命令/">
-        <h2 class="post-title">
-            Linux学习---常用命令
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            最近开始接触服务器相关的知识，服务器主流操作系统为Linux，接下来记录并复习一下所学习到的命令先贴一个网址  https://blog.csdn.net/qq_23329167/article/details/83856430
-mkdir 创建文件夹touch 创建文件rm(-f) 删除（不确认提醒）vi/vim 进入编辑scp -r &lt;本地路径文件&gt;  root@&lt;服务......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Lanyi Liu on
-        2020-12-16
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-
     <a href="/2020/11/12/element实现表格拖拽排序-sortablejs使用心得/">
         <h2 class="post-title">
             element实现表格拖拽排序---sortableJs
@@ -630,31 +512,6 @@ mkdir 创建文件夹touch 创建文件rm(-f) 删除（不确认提醒）vi/vim 
     <p class="post-meta">
         Posted by Lanyi Liu on
         2020-11-03
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2020/10/02/ES6中的空置合并运算符/">
-        <h2 class="post-title">
-            ES6中的空置合并运算符
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            a ?? b 的结果是：
-如果 a 是已定义的，则结果为 a，如果 a 不是已定义的，则结果为 b。换句话说，如果第一个参数不是 null/undefined，则 ?? 返回第一个参数。否则，返回第二个参数。
-空值合并运算符并不是什么全新的东西。它只是一种获得两者中的第一个“已定义的”值的不错的语法。
-我们可以使用我们已知的运算符重写 result = a ?? b，像这样：
-result ......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Lanyi Liu on
-        2020-10-02
     </p>
 
 </div>
@@ -708,15 +565,15 @@ result ......
 
 <div class="post-preview">
 
-    <a href="/2020/09/10/ES6最强大数组方法-splice（）的深度理解/">
+    <a href="/2020/09/10/防抖和节流/">
         <h2 class="post-title">
-            ES6数组方法---splice（）的深度理解
+            js的防抖和节流的实现方法、应用场景
         </h2>
         <h3 class="post-subtitle">
             
         </h3>
         <div class="post-content-preview">
-            方法splice 用于创建一个包含原数组中一个或多个元素的新数组，并且会影响原数组splice或许是最强大的数组方法，允许接受一到三个元素1.如果只有一个参数（索引值）    则会返回该索引到数组末尾的全部元素2.如果有两到三个参数 （这里x,y，z代指）x代表所要删除第一个元素的索引y表示删除个数z表示从索引x处插入的新元素
+            1.防抖防抖：任务频繁触发的情况下，只有任务触发的间隔超过指定间隔的时候，任务才会执行在实现效果上相当于Elementui中的v-loading，避免用户重复点击造成多次发起请求调用接口的情况，影响性能。
 ...
         </div>
     </a>
@@ -730,17 +587,15 @@ result ......
 
 <div class="post-preview">
 
-    <a href="/2020/09/09/init/">
+    <a href="/2020/09/09/浅析map和forEach的区别/">
         <h2 class="post-title">
-            init
+            浅析map和forEach的区别
         </h2>
         <h3 class="post-subtitle">
             
         </h3>
         <div class="post-content-preview">
-            hello, this is my init pages
-欢迎来到我的博客，我是饮冬，一名前端开发。
-...
+            map和forEach的共同点都起到了for循环一样的遍历数组的作用map：创建一个新的数组，其中每一个元素由调用数组中的每一个元素执行提供的函数得来map 的作用与 for 循环完全相同，只是 map 会创建一个新数组，其结果是在调用数组中的每个元素上调用提供的函数。let doubled = arr.map(num =&gt; &#123;     return num * 2; &#1......
         </div>
     </a>
     <p class="post-meta">
@@ -835,16 +690,7 @@ result ......
                 <p class="copyright text-muted">
                     Copyright &copy; lly的技术心得 2021 
                     <br>
-                    Theme by <a target="_blank" rel="noopener" href="http://huangxuan.me">Hux</a> 
-                    <span style="display: inline-block; margin: 0 5px;">
-                        <i class="fa fa-heart"></i>
-                    </span> 
-                    Ported by <a target="_blank" rel="noopener" href="http://blog.kaijun.rocks">Kaijun</a> | 
-                    <iframe
-                        style="margin-left: 2px; margin-bottom:-5px;"
-                        frameborder="0" scrolling="0" width="91px" height="20px"
-                        src="https://ghbtns.com/github-btn.html?user=kaijun&repo=hexo-theme-huxblog&type=star&count=true" >
-                    </iframe>
+                    Theme by <a></a>Hux</a> 
                 </p>
             </div>
         </div>

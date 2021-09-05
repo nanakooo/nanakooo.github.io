@@ -13,11 +13,11 @@
 
     <title>
         
-          Linux学习---常用命令 - undefined
+          浅析instanceof - undefined
         
     </title>
 
-    <link rel="canonical" href="http://example.com/2020/12/16/Linux学习-常用命令/">
+    <link rel="canonical" href="http://example.com/2021/06/03/vue双向绑定原理/">
 
     <!-- Bootstrap Core CSS -->
     
@@ -155,11 +155,11 @@
                     <div class="tags">
                         
                     </div>
-                    <h1>Linux学习---常用命令</h1>
+                    <h1>浅析instanceof</h1>
                     <h2 class="subheading"></h2>
                     <span class="meta">
                         Posted by Lanyi Liu on
-                        2020-12-16
+                        2021-06-03
                     </span>
                 </div>
             </div>
@@ -178,8 +178,13 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                <p><strong>最近开始接触服务器相关的知识，服务器主流操作系统为Linux，接下来记录并复习一下所学习到的命令</strong><br>先贴一个网址<br>  <a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_23329167/article/details/83856430">https://blog.csdn.net/qq_23329167/article/details/83856430</a></p>
-<p>mkdir 创建文件夹<br>touch 创建文件<br>rm(-f) 删除（不确认提醒）<br>vi/vim 进入编辑<br>scp -r &lt;本地路径文件&gt;  root@&lt;服务器ip&gt;:&lt;服务器地址路径&gt;  //本地终端上传文件至服务器</p>
+                <p>instanceof <strong>左操作数是一个类，右操作数是标识对象的类</strong>。*如果左侧的对象是右侧类的实例，则返回true.*而js中对象的类是通过初始化它们的构造函数来定义的。即instanceof的右操作数应当是一个函数。所有的对象都是object的实例。如果左操作数不是对象，则返回false,如果右操作数不是函数，则抛出typeError。</p>
+<p>instanceof 运算符是用来测试一个对象是否在其原型链原型构造函数的属性。其语法是object instanceof constructor</p>
+<p>instanceof 操作符用来比较两个操作数的构造函数。只有在比较自定义的对象时才有意义。 如果用来比较内置类型，将会和 typeof 操作符 一样用处不大。</p>
+<pre><code>123 instanceof number // false
+new Number(123) instance number // true
+Number(123) instance number // false
+</code></pre>
 
 
                 <hr>
@@ -189,12 +194,12 @@
                 <ul class="pager">
                     
                         <li class="previous">
-                            <a href="/2020/12/23/JS函数的柯里化/" data-toggle="tooltip" data-placement="top" title="JS函数的柯里化">&larr; Previous Post</a>
+                            <a href="/2021/06/03/浏览器循环机制，宏任务与微任务/" data-toggle="tooltip" data-placement="top" title="浏览器循环机制，宏任务与微任务">&larr; Previous Post</a>
                         </li>
                     
                     
                         <li class="next">
-                            <a href="/2020/11/12/element实现表格拖拽排序-sortablejs使用心得/" data-toggle="tooltip" data-placement="top" title="element实现表格拖拽排序---sortableJs">Next Post &rarr;</a>
+                            <a href="/2021/05/27/JS中的prototype、-proto-与constructor/" data-toggle="tooltip" data-placement="top" title="JS中的prototype、__proto__与constructor">Next Post &rarr;</a>
                         </li>
                     
                 </ul>
@@ -256,16 +261,7 @@
                 <p class="copyright text-muted">
                     Copyright &copy; lly的技术心得 2021 
                     <br>
-                    Theme by <a target="_blank" rel="noopener" href="http://huangxuan.me">Hux</a> 
-                    <span style="display: inline-block; margin: 0 5px;">
-                        <i class="fa fa-heart"></i>
-                    </span> 
-                    Ported by <a target="_blank" rel="noopener" href="http://blog.kaijun.rocks">Kaijun</a> | 
-                    <iframe
-                        style="margin-left: 2px; margin-bottom:-5px;"
-                        frameborder="0" scrolling="0" width="91px" height="20px"
-                        src="https://ghbtns.com/github-btn.html?user=kaijun&repo=hexo-theme-huxblog&type=star&count=true" >
-                    </iframe>
+                    Theme by <a></a>Hux</a> 
                 </p>
             </div>
         </div>

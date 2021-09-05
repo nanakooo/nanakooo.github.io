@@ -13,11 +13,11 @@
 
     <title>
         
-          JS函数的柯里化 - undefined
+          Promise的实现原理 - undefined
         
     </title>
 
-    <link rel="canonical" href="http://example.com/2020/12/23/JS函数的柯里化/">
+    <link rel="canonical" href="http://example.com/2021/02/23/Promise的实现原理/">
 
     <!-- Bootstrap Core CSS -->
     
@@ -155,11 +155,11 @@
                     <div class="tags">
                         
                     </div>
-                    <h1>JS函数的柯里化</h1>
+                    <h1>Promise的实现原理</h1>
                     <h2 class="subheading"></h2>
                     <span class="meta">
                         Posted by Lanyi Liu on
-                        2020-12-23
+                        2021-02-23
                     </span>
                 </div>
             </div>
@@ -178,16 +178,7 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                <p>JS函数的柯里化：通过函数调用继续返回函数的形式，实现多次接受参数统一处理的函数编码形式</p>
-<pre><code>function sum(a)&#123;
- return (b)=&gt;&#123;
-    return (c)=&gt;&#123;
-       return  a+b+c
-       &#125;
-   &#125;
-&#125;
-sum(1)(2)(3)   //6
-</code></pre>
+                <p>1.Promise的基本结构<br><code>new Promise((resolve, reject) =&gt; &#123;   setTimeout(() =&gt; &#123;     resolve(&#39;FULFILLED&#39;)   &#125;, 1000) &#125;)</code><br>构造函数Promise必须接受一个函数作为参数，我们称该函数为handle，handle又包含resolve和reject两个参数，它们是两个函数。<br>2.Promise的状态和值<br>Promise对象存在三种状态:Pending(进行中)、Fulfilled(已成功)、Rejected(已失败)。<br>状态只能由 Pending 变为 Fulfilled 或由 Pending 变为 Rejected ，且状态改变之后不会在发生变化，会一直保持这个状态。<br>3.</p>
 
 
                 <hr>
@@ -197,12 +188,12 @@ sum(1)(2)(3)   //6
                 <ul class="pager">
                     
                         <li class="previous">
-                            <a href="/2021/01/12/axios封装/" data-toggle="tooltip" data-placement="top" title="axios封装">&larr; Previous Post</a>
+                            <a href="/2021/03/18/Hooks使用心得/" data-toggle="tooltip" data-placement="top" title="Hooks使用心得">&larr; Previous Post</a>
                         </li>
                     
                     
                         <li class="next">
-                            <a href="/2020/12/16/Linux学习-常用命令/" data-toggle="tooltip" data-placement="top" title="Linux学习---常用命令">Next Post &rarr;</a>
+                            <a href="/2021/01/29/JS控制浏览器滚动条/" data-toggle="tooltip" data-placement="top" title="JS控制浏览器滚动条">Next Post &rarr;</a>
                         </li>
                     
                 </ul>
@@ -264,16 +255,7 @@ sum(1)(2)(3)   //6
                 <p class="copyright text-muted">
                     Copyright &copy; lly的技术心得 2021 
                     <br>
-                    Theme by <a target="_blank" rel="noopener" href="http://huangxuan.me">Hux</a> 
-                    <span style="display: inline-block; margin: 0 5px;">
-                        <i class="fa fa-heart"></i>
-                    </span> 
-                    Ported by <a target="_blank" rel="noopener" href="http://blog.kaijun.rocks">Kaijun</a> | 
-                    <iframe
-                        style="margin-left: 2px; margin-bottom:-5px;"
-                        frameborder="0" scrolling="0" width="91px" height="20px"
-                        src="https://ghbtns.com/github-btn.html?user=kaijun&repo=hexo-theme-huxblog&type=star&count=true" >
-                    </iframe>
+                    Theme by <a></a>Hux</a> 
                 </p>
             </div>
         </div>

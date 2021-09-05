@@ -173,24 +173,25 @@
 
 <div class="post-preview">
 
-    <a href="/2021/07/15/开源贡献指南/">
+    <a href="/2021/08/12/ES6常用的方法整理/">
         <h2 class="post-title">
-            开源贡献指南
+            比较常用的ES6方法--持续整理
         </h2>
         <h3 class="post-subtitle">
             
         </h3>
         <div class="post-content-preview">
-            如何为开源社区Github做贡献
-首先你需要配置git，并且拥有一个GitHub账号。
-GitHub页面中，在你想贡献的项目右上角点击fork, 这个时候，你会发现你的仓库中多了一个此项目的仓库（拥有者是自己）。
-将自己拥有的这个项目仓库克隆到本地，进行错误修复和更改。push到远程分支。
-在你拥有的本项目仓库点击菜单栏第二个选项Pull Request =&gt; New pull req......
+            
+数组去重并实例化：new Set(arr) 注意：此时输出的是对象，如果想返回数组用…new Set(arr)
+
+判断数组中是否含有这个值：arr.has(‘a’) 返回布尔值let arr3 = new Set([…arr1].filter(item =&gt; {  return arr4.has(item)}))//数组取交集，如果取差集则!arr4.has(item)
+
+数组排序s......
         </div>
     </a>
     <p class="post-meta">
         Posted by Lanyi Liu on
-        2021-07-15
+        2021-08-12
     </p>
 
 </div>
@@ -231,28 +232,6 @@ GitHub页面中，在你想贡献的项目右上角点击fork, 这个时候，�
 JS线程负责处理JS代码，当遇到一些异步操作的时候，则将这些异步事件移交给Web APIs 处理，自己则继续往下执行。
 Web APIs线程将接收到的事件按照一定规则添加到任务队列中，宏事件（DOM事件、Ajax事件、setTimeout事件等）添加到宏任务队列中，微事件（Promise、nextTick）添加到微事件队列中。
 JS线程处理完当前的所有任务以后（执行栈为空），它会先去微任务......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Lanyi Liu on
-        2021-06-03
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2021/06/03/vue双向绑定原理/">
-        <h2 class="post-title">
-            浅析instanceof
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            instanceof 左操作数是一个类，右操作数是标识对象的类。*如果左侧的对象是右侧类的实例，则返回true.*而js中对象的类是通过初始化它们的构造函数来定义的。即instanceof的右操作数应当是一个函数。所有的对象都是object的实例。如果左操作数不是对象，则返回false,如果右操作数不是函数，则抛出typeError。
-instanceof 运算符是用来测试一个对象是否在其原......
         </div>
     </a>
     <p class="post-meta">
@@ -319,6 +298,30 @@ proto 属性对象（除null外）独有的_proto_属性实际上是由一个对
 
 <div class="post-preview">
 
+    <a href="/2021/05/26/计算水桶最大面积/">
+        <h2 class="post-title">
+            算法题——计算水桶最大面积
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            今天力扣比较印象深的题目：给你 n 个非负整数 a1，a2，…，an，每个数代表坐标中的一个点 (i, ai) 。在坐标内画 n 条垂直线，垂直线 i 的两个端点分别为 (i, ai) 和 (i, 0) 。找出其中的两条线，使得它们与 x 轴共同构成的容器可以容纳最多的水。
+
+双指针方法
+var maxArea = function(height) {  let len = height.l......
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Lanyi Liu on
+        2021-05-26
+    </p>
+
+</div>
+<hr>
+
+<div class="post-preview">
+
     <a href="/2021/04/19/git提交规范/">
         <h2 class="post-title">
             git提交规范
@@ -366,38 +369,16 @@ proto 属性对象（除null外）独有的_proto_属性实际上是由一个对
 
 <div class="post-preview">
 
-    <a href="/2021/03/18/Hooks使用心得/">
+    <a href="/2021/02/23/Promise的心得/">
         <h2 class="post-title">
-            Hooks使用心得
+            Promise的运用--持续更新
         </h2>
         <h3 class="post-subtitle">
             
         </h3>
         <div class="post-content-preview">
-            Hook是React 16.8.0版本增加的新特性，主要目的是在函数组件中实现state以及其他特性。三个常用Hook
-
-State Hook使得函数式组件也具有state状态，并且可以进行读写操作具体用法(ts版本)：const [xxx,setXxx] = useState(initValue)第一次声明用于初始化state变量以及赋予修改此变量的方法。即xxx为 state变量，ini......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Lanyi Liu on
-        2021-03-18
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2021/02/23/Promise的实现原理/">
-        <h2 class="post-title">
-            Promise的实现原理
-        </h2>
-        <h3 class="post-subtitle">
             
-        </h3>
-        <div class="post-content-preview">
-            1.Promise的基本结构new Promise((resolve, reject) =&gt; &#123;   setTimeout(() =&gt; &#123;     resolve(&#39;FULFILLED&#39;)   &#125;, 1000) &#125;)构造函数Promise必须接受一个函数作为参数，我们称该函数为handle，handle又包含resolve和......
+Promise的基本结构new Promise((resolve, reject) =&gt; &#123; setTimeout(() =&gt; &#123;  resolve(&#39;FULFILLED&#39;) &#125;, 1000) &#125;)构造函数Promise必须接受一个函数作为参数，我们称该函数为handle，handle又包含resolve和reject两个......
         </div>
     </a>
     <p class="post-meta">
@@ -424,28 +405,6 @@ State Hook使得函数式组件也具有state状态，并且可以进行读写�
     <p class="post-meta">
         Posted by Lanyi Liu on
         2021-01-29
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2021/01/12/JS随机字符串/">
-        <h2 class="post-title">
-            JS超随机字符串
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            Math.random().toString(36).substr(2, 9)特别注意：因为每次会重新更新，不适用于可更新组件的key值
-...
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Lanyi Liu on
-        2021-01-12
     </p>
 
 </div>
@@ -490,28 +449,6 @@ State Hook使得函数式组件也具有state状态，并且可以进行读写�
     <p class="post-meta">
         Posted by Lanyi Liu on
         2020-11-12
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2020/11/03/关于node-gyp报错/">
-        <h2 class="post-title">
-            关于node-gyp报错
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            gyp报错或许是由于 c++编译扩展未安装，解决方案：1.mac需要对应的Xcode，Windows需要对应的VS2.在 PowerShell!中管理员运行 npm install –g windows-build-tools  //windows解决方案
-扩展资料：gyp是为Chromium项目创建的项目生成工具，可以从平台无关的配置生成平台相关的Visual Studio、Xcode、M......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Lanyi Liu on
-        2020-11-03
     </p>
 
 </div>
@@ -573,8 +510,11 @@ State Hook使得函数式组件也具有state状态，并且可以进行读写�
             
         </h3>
         <div class="post-content-preview">
-            1.防抖防抖：任务频繁触发的情况下，只有任务触发的间隔超过指定间隔的时候，任务才会执行在实现效果上相当于Elementui中的v-loading，避免用户重复点击造成多次发起请求调用接口的情况，影响性能。
-...
+            1.防抖防抖：任务频繁触发的情况下，只有任务触发的间隔超过指定间隔的时候，任务才会执行在实现效果上相当于Elementui中的v-loading，避免用户重复点击造成多次发起请求调用接口的情况，影响性能。实现函数
+function debounce(fn) &#123;
+  // 4、创建一个标记用来存放定时器的返回值
+  let timeout = null;
+  return funct......
         </div>
     </a>
     <p class="post-meta">

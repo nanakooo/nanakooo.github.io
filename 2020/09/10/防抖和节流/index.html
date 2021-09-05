@@ -178,7 +178,43 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                <p>1.防抖<br><strong>防抖：任务频繁触发的情况下，只有任务触发的间隔超过指定间隔的时候，任务才会执行</strong><br>在实现效果上相当于Elementui中的v-loading，避免用户重复点击造成多次发起请求调用接口的情况，影响性能。</p>
+                <p>1.防抖<br><strong>防抖：任务频繁触发的情况下，只有任务触发的间隔超过指定间隔的时候，任务才会执行</strong><br>在实现效果上相当于Elementui中的v-loading，避免用户重复点击造成多次发起请求调用接口的情况，影响性能。<br><strong>实现函数</strong></p>
+<pre><code>function debounce(fn) &#123;
+  // 4、创建一个标记用来存放定时器的返回值
+  let timeout = null;
+  return function() &#123;
+    // 5、每次当用户点击/输入的时候，把前一个定时器清除
+    clearTimeout(timeout);
+    // 6、然后创建一个新的 setTimeout，
+    // 这样就能保证点击按钮后的 interval 间隔内
+    // 如果用户还点击了的话，就不会执行 fn 函数
+    timeout = setTimeout(() =&gt; &#123;
+      fn.call(this, arguments);
+    &#125;, 1000);
+  &#125;;
+&#125;
+</code></pre>
+<p>2.节流<br><strong>节流：指定时间间隔内只会执行一次任务。</strong><br><strong>实现函数</strong></p>
+<pre><code>function throttle(fn) &#123;
+  // 4、通过闭包保存一个标记
+  let canRun = true;
+  return function() &#123;
+    // 5、在函数开头判断标志是否为 true，不为 true 则中断函数
+    if(!canRun) &#123;
+      return;
+    &#125;
+    // 6、将 canRun 设置为 false，防止执行之前再被执行
+    canRun = false;
+    // 7、定时器
+    setTimeout( () =&gt; &#123;
+      fn.call(this, arguments);
+      // 8、执行完事件（比如调用完接口）之后，重新将这个标志设置为 true
+      canRun = true;
+    &#125;, 1000);
+  &#125;;
+&#125;
+</code></pre>
+<p>3.浏览器的重绘与回流<br>重绘：如果只是小幅度改变元素样式，例如：改变元素的颜色等不会影响页面结构的操作，浏览器只需要进行 UI 层面的重新像素绘制，因此损耗较少。<br>回流：又叫重排（layout）。当元素的尺寸、结构或者触发某些属性时，浏览器会重新渲染页面，称为回流。此时，浏览器需要重新经过计算，计算后还需要重新页面布局，因此是较重的操作。<br><em>因此，防抖和节流在一定程度上减少样式和DOM的操作，提升性能。</em></p>
 
 
                 <hr>

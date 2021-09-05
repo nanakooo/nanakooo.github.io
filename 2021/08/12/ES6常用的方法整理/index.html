@@ -13,11 +13,11 @@
 
     <title>
         
-          JS超随机字符串 - undefined
+          比较常用的ES6方法--持续整理 - undefined
         
     </title>
 
-    <link rel="canonical" href="http://example.com/2021/01/12/JS随机字符串/">
+    <link rel="canonical" href="http://example.com/2021/08/12/ES6常用的方法整理/">
 
     <!-- Bootstrap Core CSS -->
     
@@ -155,11 +155,11 @@
                     <div class="tags">
                         
                     </div>
-                    <h1>JS超随机字符串</h1>
+                    <h1>比较常用的ES6方法--持续整理</h1>
                     <h2 class="subheading"></h2>
                     <span class="meta">
                         Posted by Lanyi Liu on
-                        2021-01-12
+                        2021-08-12
                     </span>
                 </div>
             </div>
@@ -178,7 +178,24 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                <p>Math.random().toString(36).substr(2, 9)<br>特别注意：因为每次会重新更新，不适用于可更新组件的key值</p>
+                <ul>
+<li><p>数组去重并实例化：new Set(arr) <strong>注意：此时输出的是对象，如果想返回数组用…new Set(arr)</strong></p>
+</li>
+<li><p>判断数组中是否含有这个值：arr.has(‘a’) 返回布尔值<br>let arr3 = new Set([…arr1].filter(item =&gt; {<br>  return arr4.has(item)<br>}))//数组取交集，如果取差集则!arr4.has(item)</p>
+</li>
+<li><p>数组排序sort：let sortArr = setArr2.sort((a,b) =&gt; {return a-b;}); 实现正序排序</p>
+</li>
+<li><p>数组添加或删除元素：<br>arr.push() 从数组末尾添加元素，返回值为添加后的长度。<br>arr.pop() 从数组末尾删除元素，只能是一个，返回值为删除的元素。<br>arr.shift() 从前面删除元素，只能删除一个 返回值是删除的元素。<br>arr.unshift() 从前面添加元素, 返回值是添加完后的数组的长度。<br>arr.splice(i,n) 删除从i(索引值)开始之后的那个元素，n为个数，返回值是删除的元素。</p>
+</li>
+<li><p>数组合并：<br>可以用扩展运算符（…）直接合并：[…a,…b]；<br>也可以：arr.concat() 连接两个数组 返回值为连接后的新数组。</p>
+</li>
+<li><p>类型之间的转化：<br>str.split(‘’) 将字符串转化为数组<br>arr.join() 将数组转化为字符串</p>
+</li>
+<li><p>math相关的方法：<br>Math.min()取最小值 Math.max()取最大值<br>Math.ceil()执行向上舍入，即它总是将数值向上舍入为最接近的整数；<br>Math.floor()执行向下舍入，即它总是将数值向下舍入为最接近的整数；<br>Math.round()执行标准舍入，即它总是将数值四舍五入为最接近的整数；<br>取随机数：Math.random().toString(36).substr(2, 9)</p>
+</li>
+<li><p><em>特别注意：因为每次会重新更新，不适用于可更新组件的key值</em>*</p>
+</li>
+</ul>
 
 
                 <hr>
@@ -187,13 +204,9 @@
 
                 <ul class="pager">
                     
-                        <li class="previous">
-                            <a href="/2021/01/29/JS控制浏览器滚动条/" data-toggle="tooltip" data-placement="top" title="JS控制浏览器滚动条">&larr; Previous Post</a>
-                        </li>
-                    
                     
                         <li class="next">
-                            <a href="/2021/01/12/axios封装/" data-toggle="tooltip" data-placement="top" title="axios封装">Next Post &rarr;</a>
+                            <a href="/2021/07/06/BigInt/" data-toggle="tooltip" data-placement="top" title="BigInt">Next Post &rarr;</a>
                         </li>
                     
                 </ul>

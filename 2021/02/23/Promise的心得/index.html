@@ -13,11 +13,11 @@
 
     <title>
         
-          
+          Promise的运用--持续更新 - undefined
         
     </title>
 
-    <link rel="canonical" href="http://example.com/archives/2021/03/">
+    <link rel="canonical" href="http://example.com/2021/02/23/Promise的心得/">
 
     <!-- Bootstrap Core CSS -->
     
@@ -136,7 +136,129 @@
 
 
     <!-- Main Content -->
-    <!-- Default Archive layout, we use archives instead. -->
+    
+<!-- Image to hack wechat -->
+<!-- <img src="http://example.com/img/icon_wechat.png" width="0" height="0"> -->
+<!-- <img src="{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}" width="0" height="0"> -->
+
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        background-image: url('/undefined')
+    }
+</style>
+<header class="intro-header" >
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                    </div>
+                    <h1>Promise的运用--持续更新</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        Posted by Lanyi Liu on
+                        2021-02-23
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+    <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <ol>
+<li>Promise的基本结构<br><code>new Promise((resolve, reject) =&gt; &#123; setTimeout(() =&gt; &#123;  resolve(&#39;FULFILLED&#39;) &#125;, 1000) &#125;)</code><br>构造函数Promise必须接受一个函数作为参数，我们称该函数为handle，handle又包含resolve和reject两个参数，它们是两个函数。</li>
+<li>Promise的状态和值<br>Promise对象存在三种状态:Pending(进行中)、Fulfilled(已成功)、Rejected(已失败)。<br>状态只能由 Pending 变为 Fulfilled 或由 Pending 变为 Rejected ，且状态改变之后不会在发生变化，会一直保持这个状态。</li>
+<li>Promise的一些方法</li>
+</ol>
+<ul>
+<li>then 链式操作的用法<br>Promise的精髓是“状态”，用维护状态、传递状态的方式来使得回调函数能够及时调用，它比传递callback函数要简单、灵活的多。所以使用Promise的正确场景是这样的：<br>p.then((data) =&gt; {<br>  console.log(data);<br>})<br>.then((data) =&gt; {<br>  console.log(data);<br>})<br>.then((data) =&gt; {<br>  console.log(data);<br>});</li>
+<li>reject的用法<br>把Promise的状态置为rejected，这样我们在then中就能捕捉到，然后执行“失败”情况的回调。<br>let p = new Promise((resolve, reject) =&gt; {//做一些异步操作<pre><code>setTimeout(function()&#123;
+      var num = Math.ceil(Math.random()*10); //生成1-10的随机数
+      if(num&lt;=5)&#123;
+          resolve(num);
+      &#125;
+      else&#123;
+          reject(&#39;数字太大了&#39;);
+      &#125;
+&#125;, 2000);
+</code></pre>
+  });<br>  p.then((data) =&gt; {<pre><code>      console.log(&#39;resolved&#39;,data);
+  &#125;,(err) =&gt; &#123;
+      console.log(&#39;rejected&#39;,err);
+  &#125;
+</code></pre>
+  ); </li>
+<li>catch的用法<br>Promise对象的catch方法，它和then的第二个参数一样，用来指定reject的回调，用于失败后抛出错误异常：<br>p.then((data) =&gt; {<br>  console.log(‘resolved’,data);<br>}).catch((err) =&gt; {<br>  console.log(‘rejected’,err);<br>});</li>
+<li>all的用法<br>Promise的all方法提供了并行执行异步操作的能力，并且在所有异步操作执行完后才执行回调：<br>let Promise1 = new Promise(function(resolve, reject){})<br>let Promise2 = new Promise(function(resolve, reject){})<br>let Promise3 = new Promise(function(resolve, reject){})</li>
+</ul>
+<p>let p = Promise.all([Promise1, Promise2, Promise3])</p>
+<p>p.then(funciton(){<br>  // 三个都成功则成功<br>}, function(){<br>  // 只要有失败，则失败<br>})<br><strong>注意：promise.all中，其中一个promise出错，如何确保执行到最后</strong><br><code>在promise.all队列中，使用map每一个过滤每一个promise任务，其中任意一个报错后，return一个返回值，确保promise能正常执行走到.then中</code><br>  var p1 = new Promise((resolve, reject) =&gt; {<br>    resolve(‘p1’);<br>});<br>  var p2 = new Promise((resolve, reject) =&gt; {<br>    resolve(‘p2’);<br>});<br>  var p3 = new Promise((resolve, reject) =&gt; {<br>    reject(‘p3’);<br>});<br>  Promise.all([p1, p2, p3].map(p =&gt; p.catch(e =&gt; ‘出错后返回的值’ )))<br>  .then(values =&gt; {<br>    console.log(values);<br>  }).catch(err =&gt; {<br>    console.log(err);<br>  })</p>
+<p><em>原理部分还有些不理解，参考文章<a target="_blank" rel="noopener" href="https://juejin.cn/post/6844903665686282253">https://juejin.cn/post/6844903665686282253</a></em></p>
+
+
+                <hr>
+
+                
+
+                <ul class="pager">
+                    
+                        <li class="previous">
+                            <a href="/2021/04/05/浏览器实现聊天对话-环信IM使用心得/" data-toggle="tooltip" data-placement="top" title="浏览器实现聊天对话---环信IM使用心得">&larr; Previous Post</a>
+                        </li>
+                    
+                    
+                        <li class="next">
+                            <a href="/2021/01/29/JS控制浏览器滚动条/" data-toggle="tooltip" data-placement="top" title="JS控制浏览器滚动条">Next Post &rarr;</a>
+                        </li>
+                    
+                </ul>
+
+                
+
+                
+
+            </div>
+    <!-- Side Catalog Container -->
+        
+
+    <!-- Sidebar Container -->
+
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+
+                <!-- Friends Blog -->
+                
+            </div>
+
+        </div>
+    </div>
+</article>
+
+
+
+
+
+
+
+
 
     <!-- Footer -->
     <!-- Footer -->

@@ -13,11 +13,11 @@
 
     <title>
         
-          Promise的实现原理 - undefined
+          算法题——计算水桶最大面积 - undefined
         
     </title>
 
-    <link rel="canonical" href="http://example.com/2021/02/23/Promise的实现原理/">
+    <link rel="canonical" href="http://example.com/2021/05/26/计算水桶最大面积/">
 
     <!-- Bootstrap Core CSS -->
     
@@ -155,11 +155,11 @@
                     <div class="tags">
                         
                     </div>
-                    <h1>Promise的实现原理</h1>
+                    <h1>算法题——计算水桶最大面积</h1>
                     <h2 class="subheading"></h2>
                     <span class="meta">
                         Posted by Lanyi Liu on
-                        2021-02-23
+                        2021-05-26
                     </span>
                 </div>
             </div>
@@ -178,7 +178,17 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                <p>1.Promise的基本结构<br><code>new Promise((resolve, reject) =&gt; &#123;   setTimeout(() =&gt; &#123;     resolve(&#39;FULFILLED&#39;)   &#125;, 1000) &#125;)</code><br>构造函数Promise必须接受一个函数作为参数，我们称该函数为handle，handle又包含resolve和reject两个参数，它们是两个函数。<br>2.Promise的状态和值<br>Promise对象存在三种状态:Pending(进行中)、Fulfilled(已成功)、Rejected(已失败)。<br>状态只能由 Pending 变为 Fulfilled 或由 Pending 变为 Rejected ，且状态改变之后不会在发生变化，会一直保持这个状态。<br>3.</p>
+                <p><em>今天力扣比较印象深的题目：给你 n 个非负整数 a1，a2，…，an，每个数代表坐标中的一个点 (i, ai) 。在坐标内画 n 条垂直线，垂直线 i 的两个端点分别为 (i, ai) 和 (i, 0) 。找出其中的两条线，使得它们与 x 轴共同构成的容器可以容纳最多的水。</em></p>
+<ul>
+<li><p>双指针方法</p>
+<p>var maxArea = function(height) {<br>  let len = height.length,left = 0,right=len-1;//分别定义左右两个指针<br>  let res = 0;<br>  while(left&lt;right) {</p>
+<pre><code>let sum = Math.min(height[left],height[right])*(right-left);//面积由短的柱子决定
+res = Math.max(sum,res);//每次都取最大的那个
+height[left]&lt;height[right]?left++:right--;//如果左柱子&lt;右柱子，就将左指针右移，反之也成立
+</code></pre>
+<p>  }<br>  return res<br>};</p>
+</li>
+</ul>
 
 
                 <hr>
@@ -188,12 +198,12 @@
                 <ul class="pager">
                     
                         <li class="previous">
-                            <a href="/2021/03/18/Hooks使用心得/" data-toggle="tooltip" data-placement="top" title="Hooks使用心得">&larr; Previous Post</a>
+                            <a href="/2021/05/26/根据vue基本路由结构的某个子节点，找到任意父节点/" data-toggle="tooltip" data-placement="top" title="根据vue基本路由结构的某个子节点，找到任意父节点">&larr; Previous Post</a>
                         </li>
                     
                     
                         <li class="next">
-                            <a href="/2021/01/29/JS控制浏览器滚动条/" data-toggle="tooltip" data-placement="top" title="JS控制浏览器滚动条">Next Post &rarr;</a>
+                            <a href="/2021/04/19/git提交规范/" data-toggle="tooltip" data-placement="top" title="git提交规范">Next Post &rarr;</a>
                         </li>
                     
                 </ul>
